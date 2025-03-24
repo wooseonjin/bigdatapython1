@@ -1,23 +1,22 @@
-import requests
-from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+import time
 
-# 유튜브 인기 급상승 동영상 페이지 URL
-url = 'https://www.youtube.com/feed/trending?hl=ko&gl=KR'
+# 크롬 드라이버를 설정하고 헤드리스 모드로 실행
+options = Options()
+options.add_argument('--headless=new')
 
-# HTTP 요청을 보내고 페이지 콘텐츠를 가져오기
-response = requests.get(url)
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
-# 페이지가 성공적으로 열렸는지 확인
-if response.status_code == 200:
-    # BeautifulSoup으로 HTML 파싱
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    # 인기 급상승 동영상의 제목과 링크를 추출하기
-    videos = soup.find_all('h3', class_='title-and-badge')
-    
-    for video in videos:
-        title = video.find('a').text.strip()
-        link = 'https://www.youtube.com' + video.find('a')['href']
-        print(f'제목: {title}, 링크: {link}')
-else:
-    print('페이지를 열 수 없습니다.')
+# 유튜브 인기 급상승 동영상 페이지로 이동
+url = 'https://www.youtube.com/feed/trending'
+driver.get(url)
+
+# 페이지 로딩 대기
+time.sleep(5)  # 5초 대기
+
+# 인기 동영상 정보 추출
+videos = driver.find_elements(By.XPATH, '//*[@id=
