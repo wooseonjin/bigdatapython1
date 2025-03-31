@@ -1,26 +1,31 @@
-import
+import random
+import time
+
 songs = ["a노래", "b노래", "c노래", "d노래"]
 print(songs)
+
+#1번째 방법
 print(songs[0])
 print(songs[1])
 print(songs[2])
 print(songs[3])
-print(songs[4])
-print(songs[5])
-print(songs[6])
-print(songs[7])
-print(songs[8])
-print(songs[9])
-print(songs[10])
 
-for i in range(1, 11):
+#2번째 방법
+for i in range(1,4):
     print(i)
 
 for song in songs:
     print(song)
 
-print("AI야 노래 한곡 만 추천해줘")
+print("AI야 노래 한곡만 추천해줘")
 print("알겠습니다. 제가 열심히 분석해서 고객님께 노래를 한곡 추천합니다.")
+ai_song = random.choice(songs)
+dd = ["두", "두", "두", "두둥"]
+for d in dd:
+    print(d)
+    time.sleep(1)
+
+print(f"두두두두둥 제가 추천한 곡은 {ai_song}입니다")
 
 #리스트를 쓰는 이유
 song1 = "a노래"
