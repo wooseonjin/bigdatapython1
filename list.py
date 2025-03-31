@@ -15,7 +15,7 @@ for d in dd:
     print(d)
     time.sleep(1)
 
-print(f"두두두두둥 제가 추천한 곡은 {ai_song}입니다")
+print(f"두두두둥 제가 추천한 곡은 {ai_song}입니다")
 
 #리스트를 쓰는 이유
 song1 = "a노래"
