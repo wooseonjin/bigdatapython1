@@ -4,16 +4,6 @@ import time
 songs = ["a노래", "b노래", "c노래", "d노래"]
 print(songs)
 
-#1번째 방법
-print(songs[0])
-print(songs[1])
-print(songs[2])
-print(songs[3])
-
-#2번째 방법
-for i in range(1,4):
-    print(i)
-
 for song in songs:
     print(song)
 
@@ -35,7 +25,3 @@ song3 = "C노래"
 #print(songs)
 #print(songs)
 #print(songs)
-
-#멜론차트 100 중에서 노래 한곡 추천 해주는 서비스 만들기
-import random
-import time
