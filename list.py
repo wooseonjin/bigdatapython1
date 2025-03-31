@@ -35,3 +35,7 @@ song3 = "C노래"
 #print(songs)
 #print(songs)
 #print(songs)
+
+#멜론차트 100 중에서 노래 한곡 추천 해주는 서비스 만들기
+import random
+import time
