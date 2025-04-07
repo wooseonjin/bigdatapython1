@@ -62,16 +62,19 @@ elif n == "2":
 
 elif n == "3":
     print("멜론 10")
+for i in range(10):
+        print(f"{songs[i][0]}. {songs[i][1]} - {songs[i][2]}")
 
 elif n == "4":
     print("AI 추천곡")
-  
+
     ai_song = random.choice(songs)
     print(f"추천곡은 {ai_song[1]} - {ai_song[2]} 입니다.") 
 
 elif n == "5":
-    print("가수 이름 검색")
-# ...
+artist_name=input("가수 이름 입력:")
+    print(f"{artist_name}의 노래")
+
 # 5를 입력하면 가수 이름 검색할 수 있게 입력창
 # 이름을 입력하면 해당 가수 이름의 노래 리스트 출력
 
