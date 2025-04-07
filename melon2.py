@@ -27,57 +27,53 @@ for entry in soup.select('tr.lst50, tr.lst100'):  # 상위 50위 및 100위 목�
     artist = entry.select_one('div.ellipsis.rank02 a').get_text()
     songs.append((rank, title, artist))
 
-# 수집한 데이터를 출력합니다.
-# for song in songs:
-#     print(f"{song[0]}. {song[1]} - {song[2]}")
-
-
-# 멜론 차트 100 중에서 노래 한곡 추천 해주는 서비스 만들기
-ai_song = random.choice(songs)
-print(f"추천곡은 {ai_song[1]} - {ai_song[2]} 입니다.") 
-
 # 1. 멜론 100곡 출력
 # 2. 멜론 50곡 출력
 # 3. 멜론 10곡 출력
 # 4. AI 추천곡 출력
 # 5. 가수 이름 검색
-
-print("=================")
-print("1. 멜론 100곡 ")
-print("2. 멜론 50곡 ")
-print("3. 멜론 10곡 ")
-print("4. AI 추천곡 ")
+print("===================")
+print("1. 멜론 100")
+print("2. 멜론 50")
+print("3. 멜론 10")
+print("4. AI 추천 노래")
 print("5. 가수 이름 검색")
-print("=================")
+print("===================")
 
 # 메뉴선택(숫자입력): 1
-n = input("메뉴선택(숫자입력):")
-print(f"당신이 입력한 값은? {n}")
+n = input("메뉴선택(숫자입력): ")
+print(f"당신이 입력한 값은? {n}") 
 
-# 만약 1을 입력하면 멜론 100 출력
+# 만약에 1을 입력하면 멜론 100 출력
 if n == "1":
-    print("멜론100")
-    for song in songs:
-     print(f"{song[0]}. {song[1]} - {song[2]}")
+    print("멜론 100")
 
-#else:
-    #print("1이 아닙니다.")
+    for i in range(100):
+        print(f"{songs[i][0]}. {songs[i][1]} - {songs[i][2]}")
+# else:
+#     print("1이 아닙니다.")
 
-# 만약 2를 입력하면 멜론 50 출력
+# 만약에 2를 입력하면 멜론 50 출력
 elif n == "2":
-    print("멜론50")
+    print("멜론 50")
+
+    for i in range(50):
+        print(f"{songs[i][0]}. {songs[i][1]} - {songs[i][2]}")
 
 elif n == "3":
-    print("멜론10")
+    print("멜론 10")
 
 elif n == "4":
-ai_song = random.choice(songs)
-print(f"추천곡은 {ai_song[1]} - {ai_song[2]} 입니다.") 
+    print("AI 추천곡")
+  
+    ai_song = random.choice(songs)
+    print(f"추천곡은 {ai_song[1]} - {ai_song[2]} 입니다.") 
 
-
-
-# 5를 입력하면 가수이름 검색 할 수 있게 입력창
-# 이름 입력하면 해당 가수 이름의 노래 리스트 출력 
+elif n == "5":
+    print("가수 이름 검색")
+# ...
+# 5를 입력하면 가수 이름 검색할 수 있게 입력창
+# 이름을 입력하면 해당 가수 이름의 노래 리스트 출력
 
 else:
-print("1~5까지 입력하세요")
+    print("1~5까지 입력하세요")
