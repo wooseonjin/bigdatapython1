@@ -26,4 +26,4 @@ for video in videos:
         print(f'조회수: {view_count.get_text()}')
         print(f'업로드 날짜: {upload_date[1](https://www.youtube.com/feed/trending?hl=ko&gl=KR "youtube.com").get_text()}')
         print('---')
-        .
+        
