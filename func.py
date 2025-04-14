@@ -129,4 +129,3 @@ def m_random(d):
         print(f'\n[추천 곡: {random_song[1]} | 아티스트: {random_song[2]}]')
     else:
         print(f'[웹 페이지를 가져오는 데 실패했어요. T.T | 상태 코드: {response.status_code}]')
-        .
