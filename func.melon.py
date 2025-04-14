@@ -3,27 +3,38 @@ from bs4 import BeautifulSoup
 import random
 import time
 
-# 멜론 차트 페이지 URL
-url = 'https://www.melon.com/chart/index.htm'
+print("==========================")
+print("| 1. 멜론 차트 TOP 100곡  |")
+print("| 2. 멜론 차트 TOP 50곡   |")
+print("| 3. 멜론 차트 TOP 10곡   |")
+print("| 4. 멜론 차트 AI 추천곡  |")
+print("| 5. 가수 이름 검색       |")
+print("| 6. 파일에 저장(멜론 100)|")
+print("==========================")
 
-# 헤더 설정
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
-}
+a = "<멜론 차트 TOP 100곡>"
+b = "<멜론 차트 TOP 50곡>"
+c = "<멜론 차트 TOP 10곡>"
+d = "<멜론 차트 AI 추천곡>"
+e = "<가수 이름 검색>"
 
-# 웹페이지 요청
-response = requests.get(url, headers=headers)
-soup = BeautifulSoup(response.text, 'html.parser')
+n = input("[원하시는 서비스에 해당하는 번호를 입력하세요.]: ")
+if n == "1":
+    print("멜론100을 출력하는 기능")
 
-# 노래 제목과 아티스트를 담을 리스트
-songs = []
+elif n == "2":
+    print(b)
+    time.sleep(1)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-# 멜론 차트 정보 추출
-for entry in soup.select('tr.lst50, tr.lst100'):
-    try:
-        rank = entry.select_one('span.rank').get_text()
-        title = entry.select_one('div.ellipsis.rank01 a').get_text()
-        artist = entry.select_one('div.ellipsis.rank02 a').get_text()
-        songs.append((rank, title, artist))
-    except AttributeError:
-        continue  # 요소를 찾지 못하면 무시
+    songs = soup.select('tr[data-song-no]')
+
+    for index, song in enumerate(songs):
+        if index >= 50:
+            break
+        rank = song.select_one('span.rank').text.strip()
+        title = song.select_one('div.ellipsis.rank01 a').text.strip()
+        artist = song.select_one('div.ellipsis.rank02 a').text.strip()
+
+        print(f'{rank}위 | 제목: {title} | 아티스트: {artist}')
