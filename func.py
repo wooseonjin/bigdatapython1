@@ -102,7 +102,7 @@ def m000(a, c):
 def m_random(d):
     print(d)
     time.sleep(1)
-    print("[좋아요! 제가 열심히 찾아서 사용자님께 노래를 한 곡 추천할게요.]")
+    print("[제가 열심히 찾아서 사용자님께 노래를 한 곡 추천할게요!]")
 
     url = 'https://www.melon.com/chart/index.htm'
     headers = {
