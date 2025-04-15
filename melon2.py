@@ -40,17 +40,17 @@ n = input("원하는 번호를 입력하세요.: ")
 print(f"당신이 입력한 번호는? {n}")
 
 if n == "1":
-    print("멜론 100")
+    print("멜론 TOP 100곡")
     for i in range(min(100, len(songs))):
         print(f"{songs[i][0]}. {songs[i][1]} - {songs[i][2]}")
 
 elif n == "2":
-    print("멜론 50")
+    print("멜론 TOP 50곡")
     for i in range(min(50, len(songs))):
         print(f"{songs[i][0]}. {songs[i][1]} - {songs[i][2]}")
 
 elif n == "3":
-    print("멜론 10")
+    print("멜론 TOP 10곡")
     for i in range(min(10, len(songs))):
         print(f"{songs[i][0]}. {songs[i][1]} - {songs[i][2]}")
 
