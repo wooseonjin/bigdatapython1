@@ -21,7 +21,3 @@ print(f"두두두둥 제가 추천한 곡은 {ai_song}입니다")
 song1 = "a노래"
 song2 = "b노래"
 song3 = "C노래"
-
-#print(songs)
-#print(songs)
-#print(songs)
